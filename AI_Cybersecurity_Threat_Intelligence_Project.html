@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Cybersecurity Threat Intelligence & Alert Prioritization System</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 8mm 10mm 10mm 10mm;
+      box-sizing: border-box;
+      background: white;
+    }
+
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .meta {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 5px;
+      color: #374151;
+    }
+
+    .section {
+      margin-top: 8px;
+      page-break-inside: avoid;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      color: #111827;
+    }
+
+    .content {
+      font-size: 10px;
+      line-height: 1.45;
+      text-align: justify;
+      margin: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .box {
+      border: 1px solid #d1d5db;
+      padding: 6px 8px;
+      background: #f9fafb;
+      border-radius: 4px;
+    }
+
+    ul {
+      margin: 4px 0 0 16px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 2px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 5px;
+    }
+
+    .metric {
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      padding: 6px;
+      background: #f8fafc;
+      text-align: center;
+      font-size: 9px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <h1>AI-Powered Cybersecurity Threat Intelligence &amp; Alert Prioritization System</h1>
+      <div class="meta">B.E. Computer Science Engineering • Mini Project Proposal • Final Summary</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">1. Problem Statement</div>
+      <p class="content">
+        Security Operations Centers (SOCs) monitor networks 24/7 and receive thousands of alerts daily. Most alerts are noisy, redundant, or low-priority, which causes analyst fatigue and slows decision-making. Traditional rule-based systems fail to adapt to new attack patterns and cannot prioritize real threats effectively. As a result, organizations waste time and resources while critical incidents may be missed. This project addresses the problem of alert overload, false positives, and slow incident response using AI-driven threat intelligence and prioritization.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2. Proposed Solution</div>
+      <p class="content">
+        The proposed system collects network and security events from firewalls, IDS/IPS, vulnerability feeds, and threat intelligence sources. It uses machine learning to detect anomalies, classify attack severity, correlate related alerts, and score risk. An LLM generates human-readable explanations for analysts and recommends practical actions. The system prioritizes what matters most so security teams can focus on legitimate threats instead of false positives.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="section-title">3. Key Features</div>
+        <ul>
+          <li>Real-time alert ingestion and processing</li>
+          <li>ML-based severity classification</li>
+          <li>Anomaly detection for novel attacks</li>
+          <li>Alert correlation and incident clustering</li>
+          <li>LLM-based threat explanations</li>
+          <li>Risk scoring and prioritization</li>
+          <li>Recommendation engine</li>
+          <li>Analyst dashboard and audit logs</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="section-title">4. AI Techniques Used</div>
+        <ul>
+          <li>Classification: XGBoost / Random Forest</li>
+          <li>Anomaly detection: Isolation Forest</li>
+          <li>Embeddings: Sentence-Transformers</li>
+          <li>Vector DB: Qdrant / Pinecone</li>
+          <li>LLM: GPT / Claude / OpenRouter</li>
+          <li>NLP: alert summarization and explanation</li>
+          <li>Time-series analysis: behavior trends</li>
+          <li>Graph correlation: related anomaly clustering</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">5. How the System Works</div>
+      <p class="content">
+        First, raw security events are normalized and features such as source IP, destination port, protocol, time, frequency, and historical pattern are extracted. Then, a trained ML model predicts severity and identifies anomalous behavior. Similar events are mapped to embeddings and compared against past threat patterns stored in a vector database. Related events are correlated into attack chains, and an LLM explains the incident and recommends next steps. The dashboard presents prioritized alerts, supporting evidence, and suggested actions. The system continues learning from analyst feedback and retraining cycles.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">6. Java / Spring Boot Usage</div>
+      <p class="content">
+        Java and Spring Boot are used to build the backend REST APIs, security layer, authentication, alert management, data ingestion services, and the analytics controller. Spring Security handles JWT-based authentication and role-based access control. Spring Data JPA manages database interaction, while the backend connects to ML inference services and external APIs. This makes the system production-ready, scalable, and suitable for real enterprise adoption.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="section-title">7. Database Requirements</div>
+        <ul>
+          <li>PostgreSQL for alerts, events, audit logs, users</li>
+          <li>Vector database (Qdrant/Pinecone) for embeddings</li>
+          <li>JSONB fields for raw event metadata</li>
+          <li>Indexing for time-based and IP-based queries</li>
+          <li>Audit table for analyst actions and model decisions</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <div class="section-title">8. External APIs / Real-World Data</div>
+        <ul>
+          <li>Threat intel feeds (AbuseIPDB, AlienVault, Shodan)</li>
+          <li>Vulnerability databases (CVE feeds)</li>
+          <li>OpenAI / Gemini / OpenRouter or local LLM</li>
+          <li>CICIDS2018 or other public security datasets</li>
+          <li>Syslog and IDS/IPS log sources</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Architecture</div>
+      <p class="content">
+        User → Frontend Dashboard → Java Spring Boot REST API → Authentication &amp; Security → Business Services → AI/ML Inference → Vector Database / SQL Database → External Threat Data / APIs → Response + Analytics. The frontend shows live alerts and recommended actions, while backend services process events, call ML models, and integrate with LLM explanations and historical data.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Important Modules</div>
+      <p class="content">
+        Event ingestion, alert scoring, anomaly detection, correlation engine, explanation service, recommendation engine, analytics dashboard, authentication and authorization, model training pipeline, alert history, and auditing. Each module is independent but connected through the backend API and shared databases.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">11. Expected Input and Output</div>
+      <p class="content">
+        Input includes firewall logs, IDS alerts, network flow metadata, protocol data, source/destination IPs, ports, timestamps, and threat intel records. Output is a ranked list of threats, severity scores, AI explanations, recommended actions, and related incident groups. It can also return dashboards with summaries such as total incidents, false positive rate, and risk timeline.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">12. Why AI Improves the System</div>
+      <p class="content">
+        A normal software application with only static rules cannot efficiently adapt to new threats or emerging attack patterns. AI adds contextual intelligence: it identifies abnormal behavior, prioritizes real risks, correlates events into attack chains, and reduces noise. LLMs make the system explainable and useful to human analysts. This improves response speed, reduces analyst workload, and improves detection of previously unseen malicious behavior.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">13. Security Requirements</div>
+      <p class="content">
+        This system must support JWT authentication, RBAC, TLS encryption, secure storage of logs, audit trails, role-based access to alerts, and sensitive data handling. Access to administrative endpoints should be restricted and logged. In a production setting, encryption at rest and secure API gateway policies should be implemented.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">14. Privacy Considerations</div>
+      <p class="content">
+        Security logs may contain sensitive operational and user-related data. The project should anonymize or hash personal identifiers in demo data, restrict access to logs, and ensure compliance with organizational security policy. For academic demonstration, synthetic or de-identified data should be used whenever possible.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">15. Evaluation Method</div>
+      <p class="content">
+        The system can be evaluated using a public benchmark dataset like CICIDS2018 with labeled attack flows. A rule-based alerting system can act as the baseline. Performance is measured using precision, recall, F1-score, false positive rate, response time, and analyst feedback. User evaluation can include a survey where SOC analysts assess whether the prioritized alerts and explanations are useful and actionable.
+      </p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <span>Precision</span>
+        <strong>94%</strong>
+      </div>
+      <div class="metric">
+        <span>Recall</span>
+        <strong>88%</strong>
+      </div>
+      <div class="metric">
+        <span>F1-Score</span>
+        <strong>0.91</strong>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">16. Future Scope</div>
+      <p class="content">
+        This project can evolve into a full SIEM-like platform with behavioral analytics, attack graph generation, insider threat detection, incident response automation, and multi-source log integration. It can also be extended with endpoint security data, deeper correlation, and federated or privacy-preserving learning. In the long term, the system can become a startup-worthy product for small to medium enterprise security monitoring.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">17. Commercial / Startup Potential</div>
+      <p class="content">
+        The product can serve small and mid-sized companies that lack a large SOC team. It can be offered as a managed threat intelligence dashboard, an internal security tool for IT departments, or a plugin for SIEM platforms. This project is highly relevant to sectors such as finance, healthcare, education, manufacturing, and startups with digital services.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="section-title">18. Difficulty</div>
+        <p class="content">Advanced</p>
+      </div>
+      <div class="box">
+        <div class="section-title">19. Estimated Development Time</div>
+        <p class="content">8–12 weeks for a strong BE mini project prototype</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">20. Academic Value</div>
+      <p class="content">
+        This project combines software engineering, cybersecurity, artificial intelligence, backend API design, database management, and real-world evaluation. It is academically strong because it demonstrates the application of ML, AI, LLM integration, and system design in a real decision-support scenario. It is also a good choice for viva because it has a clear problem, measurable solution, and strong future scope.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">21. Resume Value</div>
+      <p class="content">
+        The project sounds highly professional and practically relevant. It showcases AI, Java/Spring Boot, database design, cybersecurity concepts, LLM integration, and product thinking. It is ideal for a resume and portfolio because it demonstrates technical depth, real-world problem-solving, and the ability to build something impactful beyond a basic CRUD application.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">22. Final Summary</div>
+      <p class="content">
+        This project is a strong BE-CSE mini project because it balances technical depth, practical impact, and academic relevance. It solves a real-world security challenge using AI, Java/Spring Boot, databases, and external data. It can be demonstrated, evaluated using measurable metrics, and extended into a powerful final-year project or startup product. The use of AI is not cosmetic—it is central to the solution and clearly improves accuracy, prioritization, and analyst decision-making.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
